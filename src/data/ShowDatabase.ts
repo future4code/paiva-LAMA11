@@ -1,6 +1,4 @@
-import { Band } from "../model/Band";
 import { BaseDatabase } from "./BaseDatabase";
-
 
 export class ShowDatabase extends BaseDatabase {
 

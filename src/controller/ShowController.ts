@@ -2,7 +2,6 @@ import { Request, Response } from "express";
 import { ShowBusiness } from "../business/ShowBusiness";
 import { BaseDatabase } from "../data/BaseDatabase";
 import { FindShowsInputDTO, ShowInputDTO } from "../model/Show";
-import { formatDate } from "../utilities/formatDate";
 
 export class ShowController {
     async createShow(req: Request, res: Response) {

@@ -32,19 +32,18 @@ export class BandBusiness {
         
         const bandDatabase = new BandDatabase();
 
-        if(!band.id){
-            const bandDB = await bandDatabase.findBandbyName(band.name);
-            return bandDB;
-        }
-
-        if(!band.name){
-            const bandDB = await bandDatabase.findBandbyId(band.id);
-            return bandDB;
-        }
-
         if(!band){
             throw new Error("É nessario um id ou nome da banda para realizar a pesquisa");
         }
+
+        let ID: string | null
+        let NAME: string | null
+
+        band.id ? (ID = band.id) : (ID = null)
+        band.name ? (NAME = band.name) : (NAME = null)
+
+        const bandDB = await bandDatabase.findBand(NAME, ID);
+        return bandDB;
 
     }
 }
