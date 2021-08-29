@@ -50,6 +50,6 @@ export interface BandInputDTO{
 }
 
 export interface FindBandInputDTO{
-    name: string
-    id: string
+    name: string | null
+    id: string | null
 }

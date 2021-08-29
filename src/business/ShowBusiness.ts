@@ -1,6 +1,6 @@
 import { IdGenerator } from "../services/IdGenerator";
 import { Authenticator } from "../services/Authenticator";
-import { FindShowsInputDTO, ShowInputDTO, ValidDays } from "../model/Show";
+import { FindShowsInputDTO, ShowInputDTO } from "../model/Show";
 import { ShowDatabase } from "../data/ShowDatabase";
 
 

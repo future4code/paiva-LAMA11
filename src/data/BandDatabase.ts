@@ -26,22 +26,13 @@ export class BandDatabase extends BaseDatabase {
     }
   }
 
-  public async findBandbyName(name: string): Promise<Band> {
+  public async findBand(name: string|null, id: string|null): Promise<Band> {
 
     const result = await this.getConnection()
       .select("*")
       .from(BandDatabase.TABLE_NAME)
       .where({name})
-
-    return Band.toBandModel(result[0]);
-  }
-
-  public async findBandbyId(id: string): Promise<Band> {
-
-    const result = await this.getConnection()
-      .select("*")
-      .from(BandDatabase.TABLE_NAME)
-      .where({id})
+      .orWhere({id})
 
     return Band.toBandModel(result[0]);
   }
